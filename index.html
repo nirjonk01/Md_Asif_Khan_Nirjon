@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Md Asif Khan Nirjon | Mechanical Engineering Portfolio</title>
+<title>Md Asif Khan Nirjon | Mechanical Engineering & CFD Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -44,15 +44,15 @@ nav{
 }
 
 .nav-logo{
-  font-weight:700;font-size:1.2rem;text-decoration:none;
+  font-weight:700;font-size:1.15rem;text-decoration:none;
   background:var(--gradient);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
 
-.nav-links{display:flex;gap:1.8rem;list-style:none;}
+.nav-links{display:flex;gap:1.4rem;list-style:none;}
 
 .nav-links a{
-  text-decoration:none;font-size:.85rem;font-weight:500;
+  text-decoration:none;font-size:.82rem;font-weight:500;
   color:var(--text-secondary);position:relative;padding-bottom:4px;transition:color .3s;
 }
 .nav-links a::after{
@@ -86,9 +86,9 @@ section{padding:90px 2rem;}
 /* ── BUTTONS ── */
 .btn-primary{
   display:inline-flex;align-items:center;gap:8px;
-  padding:12px 28px;border-radius:8px;
+  padding:12px 26px;border-radius:8px;
   background:var(--gradient);color:#fff;
-  text-decoration:none;font-weight:600;font-size:.9rem;
+  text-decoration:none;font-weight:600;font-size:.88rem;
   border:none;cursor:pointer;
   box-shadow:0 0 20px rgba(0,212,255,.25);
   transition:opacity .3s,transform .2s,box-shadow .3s;
@@ -97,17 +97,18 @@ section{padding:90px 2rem;}
 
 .btn-secondary{
   display:inline-flex;align-items:center;gap:8px;
-  padding:12px 28px;border-radius:8px;
+  padding:12px 24px;border-radius:8px;
   background:transparent;color:var(--accent);
-  text-decoration:none;font-weight:600;font-size:.9rem;
+  text-decoration:none;font-weight:600;font-size:.88rem;
   border:1.5px solid var(--accent);cursor:pointer;
   transition:all .3s;
 }
 .btn-secondary:hover{background:var(--accent-glow);transform:translateY(-2px);}
 
-/* ── FADE IN ── */
-.fade-in{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease;}
-.fade-in.visible{opacity:1;transform:translateY(0);}
+/* ── FADE IN (Fallback Included so content never goes blank) ── */
+.fade-in{opacity:1;transform:translateY(0);transition:opacity .65s ease,transform .65s ease;}
+.js-enabled .fade-in{opacity:0;transform:translateY(24px);}
+.js-enabled .fade-in.visible{opacity:1;transform:translateY(0);}
 
 /* ══════════════════════════════
    HERO
@@ -115,13 +116,13 @@ section{padding:90px 2rem;}
 #hero{
   min-height:100vh;
   display:flex;align-items:center;justify-content:center;
-  padding:100px 2rem 60px;
+  padding:110px 2rem 60px;
   background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,212,255,.07),transparent 65%);
 }
 
 .hero-grid{
   max-width:1100px;width:100%;
-  display:grid;grid-template-columns:1fr 1fr;
+  display:grid;grid-template-columns:1.2fr 0.8fr;
   gap:3rem;align-items:center;
 }
 
@@ -136,16 +137,16 @@ section{padding:90px 2rem;}
 
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(1.3);}}
 
-.hero-title{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;line-height:1.2;margin-bottom:.5rem;}
+.hero-title{font-size:clamp(2rem,3.8vw,3.1rem);font-weight:800;line-height:1.2;margin-bottom:.5rem;}
 .hero-title .accent{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.hero-subtitle{font-size:.95rem;color:var(--text-secondary);margin-bottom:1.2rem;}
-.hero-desc{font-size:.9rem;color:var(--text-secondary);margin-bottom:2rem;max-width:480px;line-height:1.85;}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+.hero-subtitle{font-size:1rem;color:var(--accent);font-weight:500;margin-bottom:1.1rem;}
+.hero-desc{font-size:.9rem;color:var(--text-secondary);margin-bottom:2rem;max-width:520px;line-height:1.85;}
+.hero-btns{display:flex;gap:.9rem;flex-wrap:wrap;}
 
 /* Hero Card */
 .hero-visual{display:flex;justify-content:center;}
 .hero-card{
-  width:300px;background:var(--bg-card);
+  width:310px;background:var(--bg-card);
   border:1px solid var(--border);border-radius:20px;
   padding:2rem;text-align:center;
   box-shadow:0 0 60px rgba(0,212,255,.08);
@@ -153,22 +154,16 @@ section{padding:90px 2rem;}
 }
 @keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
 
-/* Profile Photo Styling */
 .hero-avatar{
-  width:90px;height:90px;border-radius:50%;
+  width:95px;height:95px;border-radius:50%;
   margin:0 auto 1rem;
   overflow:hidden;
   border:3px solid var(--accent);
   box-shadow:0 0 30px rgba(0,212,255,.35);
 }
-.hero-avatar img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
+.hero-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
 
-.hero-card h3{font-size:1rem;font-weight:700;margin-bottom:3px;}
+.hero-card h3{font-size:1.05rem;font-weight:700;margin-bottom:3px;}
 .hero-card .card-title{font-size:.78rem;color:var(--accent);margin-bottom:1.2rem;}
 
 .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:1rem;}
@@ -179,18 +174,15 @@ section{padding:90px 2rem;}
 .stat-box strong{display:block;font-size:1.1rem;color:var(--accent);}
 .stat-box span{font-size:.68rem;color:var(--text-secondary);}
 
-/* Software Logo Boxes */
 .software-box{
   background:var(--bg-secondary);border-radius:10px;
   padding:.65rem;border:1px solid var(--border);
   display:flex;align-items:center;justify-content:center;
-  height:60px;
+  height:58px;
 }
 .software-box img{
-  max-width:100%;
-  max-height:40px;
-  object-fit:contain;
-  filter:brightness(1.1);
+  max-width:100%;max-height:36px;
+  object-fit:contain;filter:brightness(1.1);
 }
 
 /* ══════════════════════════════
@@ -206,26 +198,19 @@ section{padding:90px 2rem;}
   position:sticky;top:90px;
 }
 
-/* About Profile Photo - replacing emoji icon */
 .about-photo{
-  width:66px;height:66px;border-radius:14px;
-  overflow:hidden;
-  margin-bottom:1rem;
+  width:72px;height:72px;border-radius:14px;
+  overflow:hidden;margin-bottom:1rem;
   border:2px solid var(--accent);
   box-shadow:0 0 20px rgba(0,212,255,.25);
 }
-.about-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
+.about-photo img{width:100%;height:100%;object-fit:cover;display:block;}
 
 .about-left h3{font-size:1.1rem;font-weight:700;margin-bottom:3px;}
 .about-left .role{font-size:.8rem;color:var(--accent);margin-bottom:1.2rem;}
 
-.detail-row{display:flex;align-items:flex-start;gap:10px;font-size:.82rem;margin-bottom:.6rem;}
-.detail-row i{color:var(--accent);margin-top:3px;width:14px;flex-shrink:0;}
+.detail-row{display:flex;align-items:flex-start;gap:10px;font-size:.82rem;margin-bottom:.7rem;}
+.detail-row i{color:var(--accent);margin-top:3px;width:15px;flex-shrink:0;}
 .detail-row span{color:var(--text-secondary);}
 .detail-row strong{color:var(--text-primary);}
 
@@ -233,9 +218,32 @@ section{padding:90px 2rem;}
 .about-right p strong{color:var(--accent);}
 
 /* ══════════════════════════════
+   PUBLICATIONS
+══════════════════════════════ */
+#publications{background:var(--bg-primary);}
+
+.pub-list{display:flex;flex-direction:column;gap:1.5rem;}
+.pub-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:14px;padding:1.8rem;
+  transition:transform .3s,box-shadow .3s,border-color .3s;
+}
+.pub-card:hover{transform:translateY(-4px);box-shadow:0 12px 35px rgba(0,212,255,.1);border-color:rgba(0,212,255,.35);}
+.pub-status{
+  display:inline-block;padding:3px 10px;border-radius:20px;
+  font-size:.72rem;font-weight:600;text-transform:uppercase;
+  background:rgba(0,212,255,.12);color:var(--accent);border:1px solid rgba(0,212,255,.3);
+  margin-bottom:.8rem;
+}
+.pub-title{font-size:1.02rem;font-weight:700;margin-bottom:.5rem;color:var(--text-primary);line-height:1.5;}
+.pub-authors{font-size:.86rem;color:var(--text-secondary);margin-bottom:.6rem;line-height:1.6;}
+.pub-authors strong{color:var(--accent);}
+.pub-journal{font-size:.84rem;color:#cbd5e1;font-style:italic;}
+
+/* ══════════════════════════════
    SKILLS
 ══════════════════════════════ */
-#skills{background:var(--bg-primary);}
+#skills{background:var(--bg-secondary);}
 
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem;}
 
@@ -262,11 +270,29 @@ section{padding:90px 2rem;}
 .skill-tag:hover{color:var(--accent);border-color:var(--accent);background:var(--accent-glow);}
 
 /* ══════════════════════════════
+   EXPERIENCE & TRAINING
+══════════════════════════════ */
+#experience{background:var(--bg-primary);}
+
+.timeline{display:flex;flex-direction:column;gap:1.5rem;}
+.timeline-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:14px;padding:1.6rem;
+  transition:all .3s;
+}
+.timeline-card:hover{border-color:rgba(0,212,255,.35);box-shadow:0 8px 30px rgba(0,212,255,.08);transform:translateX(4px);}
+.timeline-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.5rem;margin-bottom:.4rem;}
+.timeline-title{font-size:1.02rem;font-weight:700;}
+.timeline-date{font-size:.76rem;color:var(--accent);font-weight:600;background:var(--accent-glow);padding:2px 10px;border-radius:20px;border:1px solid var(--border);}
+.timeline-org{font-size:.85rem;color:var(--text-secondary);margin-bottom:.8rem;font-weight:500;}
+.timeline-card p{font-size:.85rem;color:var(--text-secondary);line-height:1.75;}
+
+/* ══════════════════════════════
    PROJECTS
 ══════════════════════════════ */
 #projects{background:var(--bg-secondary);}
 
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.8rem;}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:1.8rem;}
 
 .project-card{
   background:var(--bg-card);border-radius:16px;
@@ -275,7 +301,6 @@ section{padding:90px 2rem;}
 }
 .project-card:hover{transform:translateY(-6px);box-shadow:0 16px 50px rgba(0,212,255,.12);border-color:rgba(0,212,255,.3);}
 
-/* Image container */
 .project-img{
   width:100%;height:200px;overflow:hidden;
   position:relative;background:#0a1628;
@@ -286,13 +311,8 @@ section{padding:90px 2rem;}
 }
 .project-card:hover .project-img img{transform:scale(1.05);}
 
-/* Video container */
-.project-video{
-  width:100%;height:200px;position:relative;overflow:hidden;
-}
-.project-video iframe{
-  width:100%;height:100%;border:none;display:block;
-}
+.project-video{width:100%;height:200px;position:relative;overflow:hidden;}
+.project-video iframe{width:100%;height:100%;border:none;display:block;}
 
 .project-badge{
   position:absolute;top:12px;right:12px;
@@ -303,10 +323,10 @@ section{padding:90px 2rem;}
 }
 
 .project-body{padding:1.4rem;}
-.project-body h3{font-size:1rem;font-weight:700;margin-bottom:.6rem;}
+.project-body h3{font-size:1.02rem;font-weight:700;margin-bottom:.6rem;}
 .project-body p{font-size:.83rem;color:var(--text-secondary);line-height:1.75;margin-bottom:1.1rem;}
 
-.project-tools{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem;}
+.project-tools{display:flex;flex-wrap:wrap;gap:.4rem;}
 .tool-badge{
   font-size:.72rem;padding:4px 10px;
   background:var(--bg-secondary);color:var(--accent);
@@ -314,9 +334,24 @@ section{padding:90px 2rem;}
 }
 
 /* ══════════════════════════════
+   AWARDS
+══════════════════════════════ */
+#awards{background:var(--bg-primary);}
+.awards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
+.award-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:14px;padding:1.7rem;transition:all .3s;
+}
+.award-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 10px 30px rgba(0,212,255,.1);}
+.award-icon{font-size:1.8rem;color:var(--accent);margin-bottom:.8rem;}
+.award-card h3{font-size:.95rem;font-weight:700;margin-bottom:.4rem;}
+.award-card .meta{font-size:.78rem;color:var(--accent);margin-bottom:.6rem;}
+.award-card p{font-size:.82rem;color:var(--text-secondary);line-height:1.7;}
+
+/* ══════════════════════════════
    STRENGTHS
 ══════════════════════════════ */
-#strengths{background:var(--bg-primary);}
+#strengths{background:var(--bg-secondary);}
 
 .strengths-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:1.3rem;}
 
@@ -333,12 +368,12 @@ section{padding:90px 2rem;}
 /* ══════════════════════════════
    RESUME
 ══════════════════════════════ */
-#resume{background:var(--bg-secondary);}
+#resume{background:var(--bg-primary);}
 
 .resume-box{
-  max-width:660px;margin:0 auto;
+  max-width:680px;margin:0 auto;
   background:var(--bg-card);border:1px solid var(--border);
-  border-radius:20px;padding:3rem;text-align:center;
+  border-radius:20px;padding:3rem 2rem;text-align:center;
 }
 .resume-icon{
   width:68px;height:68px;border-radius:16px;
@@ -352,7 +387,7 @@ section{padding:90px 2rem;}
 /* ══════════════════════════════
    CONTACT
 ══════════════════════════════ */
-#contact{background:var(--bg-primary);}
+#contact{background:var(--bg-secondary);}
 
 .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;align-items:start;}
 
@@ -390,7 +425,7 @@ section{padding:90px 2rem;}
 
 /* ── FOOTER ── */
 footer{
-  background:var(--bg-secondary);
+  background:var(--bg-primary);
   border-top:1px solid var(--border);
   padding:2rem;text-align:center;
 }
@@ -415,13 +450,13 @@ footer a{color:var(--accent);text-decoration:none;}
     transition:max-height .4s ease,padding .4s;
     border-bottom:1px solid var(--border);
   }
-  .nav-links.open{max-height:400px;padding:1rem 0;}
+  .nav-links.open{max-height:450px;padding:1rem 0;}
   .nav-links li{width:100%;text-align:center;}
-  .nav-links a{display:block;padding:13px 0;font-size:.93rem;}
+  .nav-links a{display:block;padding:11px 0;font-size:.9rem;}
 
   .hero-grid{grid-template-columns:1fr;text-align:center;}
   .hero-visual{order:-1;}
-  .hero-card{width:270px;}
+  .hero-card{width:280px;}
   .hero-btns{justify-content:center;}
   .hero-desc{margin:0 auto 2rem;}
 
@@ -444,8 +479,11 @@ footer a{color:var(--accent);text-decoration:none;}
   <ul class="nav-links" id="navLinks">
     <li><a href="#hero">Home</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#publications">Publications</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#awards">Awards</a></li>
     <li><a href="#strengths">Strengths</a></li>
     <li><a href="#resume">Resume</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -458,29 +496,26 @@ footer a{color:var(--accent);text-decoration:none;}
     <div class="fade-in">
       <div class="hero-tag"><span class="dot"></span> Open to Opportunities</div>
       <h1 class="hero-title">Hi, I'm <span class="accent">Md Asif Khan Nirjon</span></h1>
-      <p class="hero-subtitle">Mechanical Engineering Undergraduate</p>
+      <p class="hero-subtitle">Mechanical Engineering Undergraduate & Researcher</p>
       <p class="hero-desc">
-        Passionate about mechanical design, data-driven engineering, and innovative product development.
-        I design functional systems in SOLIDWORKS and analyze engineering data using MATLAB.
+        Specializing in Computational Fluid Dynamics (CFD), multiphase flow modeling (VOF), and mechanical system design. Designing functional systems in SOLIDWORKS and performing engineering analyses with ANSYS Fluent, Python, and MATLAB.
       </p>
       <div class="hero-btns">
-        <a class="btn-primary" href="#projects"><i class="fas fa-rocket"></i> View Projects</a>
-        <a class="btn-secondary" href="#resume"><i class="fas fa-download"></i> Download Resume</a>
-        <a class="btn-secondary" href="#contact"><i class="fas fa-envelope"></i> Contact Me</a>
+        <a class="btn-primary" href="#publications"><i class="fas fa-book-open"></i> Publications</a>
+        <a class="btn-secondary" href="#projects"><i class="fas fa-rocket"></i> Projects</a>
+        <a class="btn-secondary" href="#resume"><i class="fas fa-download"></i> Academic CV</a>
       </div>
     </div>
     <div class="hero-visual fade-in">
       <div class="hero-card">
-        <!-- Profile Photo replacing gear icon -->
         <div class="hero-avatar">
           <img src="nirjon.jpeg" alt="Md Asif Khan Nirjon">
         </div>
         <h3>Md Asif Khan Nirjon</h3>
-        <p class="card-title">Mechanical Engineering Undergrad</p>
+        <p class="card-title">CFD & Mechanical Design</p>
         <div class="hero-stats">
-          <div class="stat-box"><strong>3D</strong><span>CAD Design</span></div>
-          <div class="stat-box"><strong>ME</strong><span>Engineering</span></div>
-          <!-- Replaced with MATLAB and KeyShot logos -->
+          <div class="stat-box"><strong>CFD</strong><span>Simulation</span></div>
+          <div class="stat-box"><strong>CAD</strong><span>SOLIDWORKS</span></div>
           <div class="software-box">
             <img src="matlab.png" alt="MATLAB">
           </div>
@@ -503,38 +538,78 @@ footer a{color:var(--accent);text-decoration:none;}
     </div>
     <div class="about-grid">
       <div class="about-left fade-in">
-        <!-- Profile Photo replacing emoji icon -->
         <div class="about-photo">
           <img src="nirjon.jpeg" alt="Md Asif Khan Nirjon">
         </div>
         <h3>Md Asif Khan Nirjon</h3>
         <p class="role">Mechanical Engineer</p>
         <div class="detail-row"><i class="fas fa-graduation-cap"></i>
-          <div><strong>B.Sc. Mechanical Engineering</strong><br><span>Undergraduate · Bangladesh</span></div>
+          <div><strong>B.Sc. Mechanical Engineering</strong><br><span>HSTU, Dinajpur (Graduation: 2027)</span></div>
+        </div>
+        <div class="detail-row"><i class="fas fa-chart-pie"></i>
+          <div><strong>CGPA: 3.39 / 4.00</strong></div>
         </div>
         <div class="detail-row"><i class="fas fa-map-marker-alt"></i>
           <div><strong>Bangladesh</strong></div>
         </div>
         <div class="detail-row"><i class="fas fa-tools"></i>
-          <div><span>SOLIDWORKS · MATLAB · KeyShot</span></div>
+          <div><span>SOLIDWORKS · ANSYS Fluent · MATLAB · Python</span></div>
         </div>
       </div>
       <div class="about-right fade-in">
         <p>
-          I am currently pursuing a <strong>Bachelor's degree in Mechanical Engineering</strong> in Bangladesh.
-          I have a strong academic and practical interest in mechanical system design, product development,
-          and data-driven engineering analysis.
+          I am an undergraduate researcher pursuing a <strong>Bachelor of Science in Mechanical Engineering</strong> at Hajee Mohammad Danesh Science and Technology University (HSTU), Bangladesh. I have a strong academic and practical interest in mechanical system design, computational simulations, and data-driven engineering analysis.
         </p>
         <p>
-          I develop detailed <strong>3D models and assemblies</strong> using SOLIDWORKS and create realistic
-          product visualizations using KeyShot. Alongside design work, I perform engineering data analysis
-          using <strong>MATLAB</strong>, allowing me to approach problems quantitatively and make informed technical decisions.
+          I develop detailed <strong>3D models and assemblies</strong> using SOLIDWORKS and create realistic product visualizations in KeyShot. In simulation and computing, I execute multiphase flow modeling (VOF) in <strong>ANSYS Fluent</strong> alongside numerical analysis using <strong>MATLAB and Python</strong>.
         </p>
         <p>
-          I also utilize <strong>Adobe Photoshop and Illustrator</strong> to create professional engineering
-          presentations and project documentation — combining technical depth with clean visual communication.
+          I also utilize <strong>Adobe Photoshop and Illustrator</strong> to create professional engineering presentations and project documentation — combining technical rigor with clean visual communication.
         </p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PUBLICATIONS ══ -->
+<section id="publications">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label">Academic Output</span>
+      <h2 class="section-title">Journal <span>Publications</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="pub-list">
+      
+      <div class="pub-card fade-in">
+        <span class="pub-status"><i class="fas fa-clock"></i> Under Review • Elsevier</span>
+        <h3 class="pub-title">Perforated-Support Dorsal-Washing Subsystem for Assistive Bathing of Bedridden Users: Geometric, Multiphase CFD, and Mannequin Evaluation</h3>
+        <p class="pub-authors">
+          Md Imran Khan, Rita Es souissi, <strong>Md Asif Khan Nirjon</strong>, Rifath Bin Hossain, Di Changan, Peng Peng
+        </p>
+        <p class="pub-journal">Under Review in Elsevier Journal (2026)</p>
+        <div class="project-tools" style="margin-top: 1rem;">
+          <span class="tool-badge">Multiphase CFD (VOF)</span>
+          <span class="tool-badge">ANSYS Fluent</span>
+          <span class="tool-badge">SST Turbulence</span>
+          <span class="tool-badge">3D CAD Modeling</span>
+        </div>
+      </div>
+
+      <div class="pub-card fade-in">
+        <span class="pub-status"><i class="fas fa-clock"></i> Under Review • Progress in Engineering Science</span>
+        <h3 class="pub-title">An Integrated Structural and Dynamic Evaluation Framework for a Topology-Optimized Lightweight Robotic Gripper</h3>
+        <p class="pub-authors">
+          Rita Es souissi, Md Imran Khan, Rifath Bin Hossain, <strong>Md Asif Khan Nirjon</strong>, Xiaoli Wu
+        </p>
+        <p class="pub-journal">Under Review in Progress in Engineering Science, Elsevier (2026)</p>
+        <div class="project-tools" style="margin-top: 1rem;">
+          <span class="tool-badge">Topology Optimization</span>
+          <span class="tool-badge">Dynamic FEA</span>
+          <span class="tool-badge">SOLIDWORKS</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -549,6 +624,17 @@ footer a{color:var(--accent);text-decoration:none;}
     </div>
     <div class="skills-grid">
       <div class="skill-card fade-in">
+        <div class="skill-card-icon"><i class="fas fa-wind"></i></div>
+        <h3>Simulation & CFD</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">ANSYS Fluent</span>
+          <span class="skill-tag">Multiphase VOF</span>
+          <span class="skill-tag">k-ω SST / k-ε</span>
+          <span class="skill-tag">ANSYS CFX</span>
+          <span class="skill-tag">ANSYS Mechanical (FEA)</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in">
         <div class="skill-card-icon"><i class="fas fa-drafting-compass"></i></div>
         <h3>Mechanical Design & CAD</h3>
         <div class="skill-tags">
@@ -560,32 +646,65 @@ footer a{color:var(--accent);text-decoration:none;}
         </div>
       </div>
       <div class="skill-card fade-in">
-        <div class="skill-card-icon"><i class="fas fa-chart-line"></i></div>
-        <h3>Data Analysis & Computation</h3>
+        <div class="skill-card-icon"><i class="fas fa-terminal"></i></div>
+        <h3>Programming & Computing</h3>
         <div class="skill-tags">
+          <span class="skill-tag">Python (Data Analysis)</span>
           <span class="skill-tag">MATLAB</span>
-          <span class="skill-tag">Data Analysis</span>
-          <span class="skill-tag">Data Visualization</span>
+          <span class="skill-tag">Linux (Ubuntu Dual-Boot)</span>
         </div>
       </div>
       <div class="skill-card fade-in">
         <div class="skill-card-icon"><i class="fas fa-cube"></i></div>
-        <h3>Rendering & Visualization</h3>
+        <h3>Rendering & Graphics</h3>
         <div class="skill-tags">
           <span class="skill-tag">KeyShot</span>
           <span class="skill-tag">Adobe Photoshop</span>
           <span class="skill-tag">Adobe Illustrator</span>
+          <span class="skill-tag">MS Office (BTEB Grade A+)</span>
         </div>
       </div>
-      <div class="skill-card fade-in">
-        <div class="skill-card-icon"><i class="fas fa-file-alt"></i></div>
-        <h3>Documentation & Productivity</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Microsoft Word</span>
-          <span class="skill-tag">Microsoft Excel</span>
-          <span class="skill-tag">PowerPoint</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EXPERIENCE & TRAINING ══ -->
+<section id="experience">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label">Hands-on Background</span>
+      <h2 class="section-title">Experience & <span>Training</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-card fade-in">
+        <div class="timeline-header">
+          <h3 class="timeline-title">Undergraduate Thesis & Research</h3>
+          <span class="timeline-date">2026 – Present</span>
         </div>
+        <div class="timeline-org">Dept. of Mechanical Engineering, HSTU • Supervisor: Dr. K. H. Nazmul Ahsan</div>
+        <p>Conducting preliminary literature reviews on aerodynamic optimization, turbulence modeling, and fluid-thermal analysis. Developing numerical frameworks in ANSYS Fluent and SOLIDWORKS.</p>
       </div>
+
+      <div class="timeline-card fade-in">
+        <div class="timeline-header">
+          <h3 class="timeline-title">Mechanical Engineering Trainee (Industrial Technology)</h3>
+          <span class="timeline-date">June 2026</span>
+        </div>
+        <div class="timeline-org">Training Institute for Chemical Industries (TICI), BCIC • Polash, Narsingdi</div>
+        <p>Completed intensive 3-week hands-on industrial training on process plant machinery, compressors, pumps, steam turbines, and piping networks. Achieved <strong>Grade A+</strong> in final evaluation.</p>
+      </div>
+
+      <div class="timeline-card fade-in">
+        <div class="timeline-header">
+          <h3 class="timeline-title">Data Analysis with Python and MATLAB</h3>
+          <span class="timeline-date">Jul 2025 – Aug 2025</span>
+        </div>
+        <div class="timeline-org">Faculty of CSE, HSTU • EDGE Project, Bangladesh Computer Council (BCC), ICT Division</div>
+        <p>Completed 80 hours of coursework on numerical computing, data manipulation, algorithm implementation, and visualization using Python and MATLAB.</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -600,27 +719,45 @@ footer a{color:var(--accent);text-decoration:none;}
     </div>
     <div class="projects-grid">
 
-      <!-- Project 1 — Spray Machine (real image) -->
+      <!-- Project 1 — Spray Machine (Uses spray-machine.jpg) -->
       <div class="project-card fade-in">
         <div class="project-img">
           <img src="spray-machine.jpg" alt="Agricultural Spray Machine Design">
-          <span class="project-badge">CAD · KeyShot</span>
+          <span class="project-badge">SOLIDWORKS · Client CAD</span>
         </div>
         <div class="project-body">
           <h3>Agricultural Spray Machine Design</h3>
           <p>
-            A fully functional agricultural spraying system designed in SOLIDWORKS with detailed component
-            modeling and structured part relationships. Realistic rendering completed in KeyShot for
-            professional product presentation.
+            Developed complete 3D mechanical part models, chassis layout, and nozzle mounting linkages in SOLIDWORKS. Generated production-ready 2D technical drawings, exploded views, and Bill of Materials (BOM).
           </p>
           <div class="project-tools">
             <span class="tool-badge">SOLIDWORKS</span>
+            <span class="tool-badge">CAD Modeling</span>
             <span class="tool-badge">KeyShot</span>
           </div>
         </div>
       </div>
 
-      <!-- Project 2 — YouTube Video -->
+      <!-- Project 2 — Autonomous Soccer Robot -->
+      <div class="project-card fade-in">
+        <div class="project-img" style="display:flex;align-items:center;justify-content:center;background:#0d1829;">
+          <i class="fas fa-robot" style="font-size:3.5rem;color:var(--accent);opacity:.5;"></i>
+          <span class="project-badge">Robotics · KUET</span>
+        </div>
+        <div class="project-body">
+          <h3>Autonomous Soccer Robot Chassis</h3>
+          <p>
+            Engineered an omnidirectional chassis with low center-of-gravity for the Soccer Bot competition at <strong>IGNITION 2023</strong> (KUET). Designed custom motor mounts and shock-dampening sensor brackets.
+          </p>
+          <div class="project-tools">
+            <span class="tool-badge">SOLIDWORKS</span>
+            <span class="tool-badge">Chassis Layout</span>
+            <span class="tool-badge">Kinematics</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 — YouTube Video -->
       <div class="project-card fade-in">
         <div class="project-video">
           <iframe
@@ -645,23 +782,59 @@ footer a{color:var(--accent);text-decoration:none;}
         </div>
       </div>
 
-      <!-- Project 3 — MATLAB -->
+      <!-- Project 4 — MATLAB & Python -->
       <div class="project-card fade-in">
-        <div class="project-img" style="display:flex;align-items:center;justify-content:center;">
+        <div class="project-img" style="display:flex;align-items:center;justify-content:center;background:#0b1526;">
           <i class="fas fa-wave-square" style="font-size:3.5rem;color:var(--accent);opacity:.45;"></i>
           <span class="project-badge">MATLAB</span>
         </div>
         <div class="project-body">
           <h3>Engineering Data Analysis</h3>
           <p>
-            A MATLAB-based data analysis project involving engineering datasets — structured data processing,
+            A MATLAB and Python-based data analysis project involving engineering datasets — structured data processing,
             statistical evaluation, and clear visualization outputs for informed engineering decision-making.
           </p>
           <div class="project-tools">
             <span class="tool-badge">MATLAB</span>
+            <span class="tool-badge">Python</span>
             <span class="tool-badge">Data Visualization</span>
           </div>
         </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ AWARDS ══ -->
+<section id="awards">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label">Recognition</span>
+      <h2 class="section-title">Honors & <span>Awards</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="awards-grid">
+
+      <div class="award-card fade-in">
+        <div class="award-icon"><i class="fas fa-award"></i></div>
+        <h3>Government Junior Scholarship (JSC)</h3>
+        <div class="meta">2016 • Ministry of Education & BISE, Bangladesh</div>
+        <p>Awarded competitive national merit scholarship for academic distinction in the Junior School Certificate (JSC) Examination.</p>
+      </div>
+
+      <div class="award-card fade-in">
+        <div class="award-icon"><i class="fas fa-medal"></i></div>
+        <h3>Government Primary Scholarship (PSC)</h3>
+        <div class="meta">2013 • Directorate of Primary Education (DPE)</div>
+        <p>Awarded competitive national merit scholarship based on academic excellence in the Primary School Certificate Examination.</p>
+      </div>
+
+      <div class="award-card fade-in">
+        <div class="award-icon"><i class="fas fa-certificate"></i></div>
+        <h3>SWUGN Technical Certifications</h3>
+        <div class="meta">2025 • SolidWorks User Group Network</div>
+        <p>International workshop certifications in Advanced Parametric Workflows and Mate Optimization featuring Nairobi City SWUGN.</p>
       </div>
 
     </div>
@@ -716,13 +889,12 @@ footer a{color:var(--accent);text-decoration:none;}
     </div>
     <div class="resume-box fade-in">
       <div class="resume-icon"><i class="fas fa-file-pdf"></i></div>
-      <h3>Md Asif Khan Nirjon — Resume</h3>
+      <h3>Md Asif Khan Nirjon — Academic CV</h3>
       <p>
-        Download my resume to learn more about my academic background, technical skills,
-        and engineering experience — including CAD projects, MATLAB analysis, and design coursework.
+        Download my academic curriculum vitae detailing research publications, CFD simulations, industrial training, and mechanical design experience.
       </p>
       <a class="btn-primary" href="resume.pdf" download="Md_Asif_Khan_Nirjon_Resume.pdf">
-        <i class="fas fa-download"></i> Download Resume (PDF)
+        <i class="fas fa-download"></i> Download Academic CV (PDF)
       </a>
     </div>
   </div>
@@ -796,7 +968,7 @@ footer a{color:var(--accent);text-decoration:none;}
   <div class="footer-inner">
     <div class="footer-logo">Md Asif Khan Nirjon</div>
     <p>Mechanical Engineering Undergraduate · Bangladesh</p>
-    <p style="margin-top:.5rem">© 2025 Md Asif Khan Nirjon · Built with <span style="color:var(--accent)">♥</span></p>
+    <p style="margin-top:.5rem">© 2026 Md Asif Khan Nirjon · Built with <span style="color:var(--accent)">♥</span></p>
   </div>
 </footer>
 
@@ -807,16 +979,17 @@ const navLinks   = document.getElementById('navLinks');
 hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
-// Fade-in
+// Fade-in animation with instant fallback
+document.documentElement.classList.add('js-enabled');
 const fadeEls = document.querySelectorAll('.fade-in');
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
+  entries.forEach((e) => {
     if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      e.target.classList.add('visible');
       observer.unobserve(e.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.05 });
 fadeEls.forEach(el => observer.observe(el));
 
 // Active nav highlight
